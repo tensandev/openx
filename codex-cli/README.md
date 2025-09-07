@@ -103,6 +103,7 @@ export OPENAI_API_KEY="your-api-key-here"
 > - openrouter
 > - azure
 > - gemini
+> - claude
 > - ollama
 > - mistral
 > - deepseek
@@ -414,6 +415,11 @@ Below is a comprehensive example of `config.json` with multiple custom providers
       "baseURL": "https://generativelanguage.googleapis.com/v1beta/openai",
       "envKey": "GEMINI_API_KEY"
     },
+    "claude": {
+      "name": "Claude (via OpenRouter)",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "envKey": "OPENROUTER_API_KEY"
+    },
     "ollama": {
       "name": "Ollama",
       "baseURL": "http://localhost:11434/v1",
@@ -474,8 +480,11 @@ export OPENAI_API_KEY="your-api-key-here"
 export AZURE_OPENAI_API_KEY="your-azure-api-key-here"
 export AZURE_OPENAI_API_VERSION="2025-04-01-preview" (Optional)
 
-# OpenRouter
+# OpenRouter (for Claude and other models)
 export OPENROUTER_API_KEY="your-openrouter-key-here"
+
+# Gemini  
+export GEMINI_API_KEY="your-gemini-api-key-here"
 
 # Similarly for other providers
 ```
