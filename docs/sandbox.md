@@ -65,7 +65,7 @@ sandbox_mode    = "read-only"
 
 ### Experimenting with the Codex Sandbox
 
-To test to see what happens when a command is run under the sandbox provided by Codex, we provide the following subcommands in Codex CLI:
+To test to see what happens when a command is run under the sandbox provided by Codex, we provide the following subcommands in OpenX CLI:
 
 ```
 # macOS

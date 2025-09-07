@@ -12,10 +12,10 @@ This key must, at minimum, have write access to the Responses API.
 
 ## Migrating to ChatGPT login from API key
 
-If you've used the Codex CLI before with usage-based billing via an API key and want to switch to using your ChatGPT plan, follow these steps:
+If you've used the OpenX CLI before with usage-based billing via an API key and want to switch to using your ChatGPT plan, follow these steps:
 
 1. Update the CLI and ensure `codex --version` is `0.20.0` or later
-2. Delete `~/.codex/auth.json` (on Windows: `C:\\Users\\USERNAME\\.codex\\auth.json`)
+2. Delete `~/.openx/auth.json` (on Windows: `C:\\Users\\USERNAME\\.codex\\auth.json`)
 3. Run `codex login` again
 
 ## Forcing a specific auth method (advanced)
@@ -25,7 +25,7 @@ You can explicitly choose which authentication Codex should prefer when both are
 - To always use your API key (even when ChatGPT auth exists), set:
 
 ```toml
-# ~/.codex/config.toml
+# ~/.openx/config.toml
 preferred_auth_method = "apikey"
 ```
 
@@ -38,7 +38,7 @@ codex --config preferred_auth_method="apikey"
 - To prefer ChatGPT auth (default), set:
 
 ```toml
-# ~/.codex/config.toml
+# ~/.openx/config.toml
 preferred_auth_method = "chatgpt"
 ```
 
@@ -54,7 +54,7 @@ Today, the login process entails running a server on `localhost:1455`. If you ar
 
 ### Authenticate locally and copy your credentials to the "headless" machine
 
-The easiest solution is likely to run through the `codex login` process on your local machine such that `localhost:1455` _is_ accessible in your web browser. When you complete the authentication process, an `auth.json` file should be available at `$CODEX_HOME/auth.json` (on Mac/Linux, `$CODEX_HOME` defaults to `~/.codex` whereas on Windows, it defaults to `%USERPROFILE%\\.codex`).
+The easiest solution is likely to run through the `codex login` process on your local machine such that `localhost:1455` _is_ accessible in your web browser. When you complete the authentication process, an `auth.json` file should be available at `$CODEX_HOME/auth.json` (on Mac/Linux, `$CODEX_HOME` defaults to `~/.openx` whereas on Windows, it defaults to `%USERPROFILE%\\.codex`).
 
 Because the `auth.json` file is not tied to a specific host, once you complete the authentication flow locally, you can copy the `$CODEX_HOME/auth.json` file to the headless machine and then `codex` should "just work" on that machine. Note to copy a file to a Docker container, you can do:
 
@@ -68,14 +68,14 @@ docker cp auth.json MY_CONTAINER:"$CONTAINER_HOME/.codex/auth.json"
 whereas if you are `ssh`'d into a remote machine, you likely want to use [`scp`](https://en.wikipedia.org/wiki/Secure_copy_protocol):
 
 ```shell
-ssh user@remote 'mkdir -p ~/.codex'
-scp ~/.codex/auth.json user@remote:~/.codex/auth.json
+ssh user@remote 'mkdir -p ~/.openx'
+scp ~/.openx/auth.json user@remote:~/.openx/auth.json
 ```
 
 or try this one-liner:
 
 ```shell
-ssh user@remote 'mkdir -p ~/.codex && cat > ~/.codex/auth.json' < ~/.codex/auth.json
+ssh user@remote 'mkdir -p ~/.openx && cat > ~/.openx/auth.json' < ~/.openx/auth.json
 ```
 
 ### Connecting through VPS or remote

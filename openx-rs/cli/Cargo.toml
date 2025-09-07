@@ -1,0 +1,40 @@
+[package]
+edition = "2024"
+name = "openx-cli"
+version = { workspace = true }
+
+[[bin]]
+name = "openx"
+path = "src/main.rs"
+
+[lib]
+name = "openx_cli"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+openx-arg0 = { path = "../arg0" }
+openx-chatgpt = { path = "../chatgpt" }
+openx-common = { path = "../common", features = ["cli"] }
+openx-core = { path = "../core" }
+openx-exec = { path = "../exec" }
+openx-login = { path = "../login" }
+openx-mcp-server = { path = "../mcp-server" }
+openx-protocol = { path = "../protocol" }
+openx-tui = { path = "../tui" }
+serde_json = "1"
+tokio = { version = "1", features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+openx-protocol-ts = { path = "../protocol-ts" }

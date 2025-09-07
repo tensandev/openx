@@ -46,8 +46,8 @@ codex/
 ├── pnpm-workspace.yaml    # Workspace configuration
 ├── .npmrc                 # pnpm configuration
 ├── package.json           # Root dependencies and scripts
-├── codex-cli/             # Main package
-│   └── package.json       # codex-cli specific dependencies
+├── openx-cli/             # Main package
+│   └── package.json       # openx-cli specific dependencies
 └── docs/                  # Documentation (future package)
 ```
 
