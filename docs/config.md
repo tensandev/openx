@@ -9,7 +9,7 @@ Codex supports several mechanisms for setting config values:
   - Values can contain objects, such as `--config shell_environment_policy.include_only=["PATH", "HOME", "USER"]`.
   - For consistency with `config.toml`, values are in TOML format rather than JSON format, so use `{a = 1, b = 2}` rather than `{"a": 1, "b": 2}`.
   - If `value` cannot be parsed as a valid TOML value, it is treated as a string value. This means that both `-c model="o3"` and `-c model=o3` are equivalent.
-- The `$CODEX_HOME/config.toml` configuration file where the `CODEX_HOME` environment value defaults to `~/.codex`. (Note `CODEX_HOME` will also be where logs and other Codex-related information are stored.)
+- The `$CODEX_HOME/config.toml` configuration file where the `CODEX_HOME` environment value defaults to `~/.openx`. (Note `CODEX_HOME` will also be where logs and other Codex-related information are stored.)
 
 Both the `--config` flag and the `config.toml` file support the following options:
 
@@ -49,7 +49,7 @@ wire_api = "chat"
 query_params = {}
 ```
 
-Note this makes it possible to use Codex CLI with non-OpenAI models, so long as they use a wire API that is compatible with the OpenAI chat completions API. For example, you could define the following provider to use Codex CLI with Ollama running locally:
+Note this makes it possible to use OpenX CLI with non-OpenAI models, so long as they use a wire API that is compatible with the OpenAI chat completions API. For example, you could define the following provider to use OpenX CLI with Ollama running locally:
 
 ```toml
 [model_providers.ollama]
@@ -64,6 +64,15 @@ Or a third-party provider (using a distinct environment variable for the API key
 name = "Mistral"
 base_url = "https://api.mistral.ai/v1"
 env_key = "MISTRAL_API_KEY"
+```
+
+You can also access Claude models via OpenRouter:
+
+```toml
+[model_providers.claude]
+name = "Claude"
+base_url = "https://openrouter.ai/api/v1"
+env_key = "OPENROUTER_API_KEY"
 ```
 
 Note that Azure requires `api-version` to be passed as a query parameter, so be sure to specify it as part of `query_params` when defining the Azure provider:
@@ -215,7 +224,7 @@ Users can specify config values at multiple levels. Order of precedence is as fo
 1. custom command-line argument, e.g., `--model o3`
 2. as part of a profile, where the `--profile` is specified via a CLI (or in the config file itself)
 3. as an entry in `config.toml`, e.g., `model = "o3"`
-4. the default value that comes with Codex CLI (i.e., Codex CLI defaults to `gpt-5`)
+4. the default value that comes with OpenX CLI (i.e., OpenX CLI defaults to `gpt-5`)
 
 ## model_reasoning_effort
 
@@ -350,7 +359,7 @@ This config option is comparable to how Claude and Cursor define `mcpServers` in
 }
 ```
 
-Should be represented as follows in `~/.codex/config.toml`:
+Should be represented as follows in `~/.openx/config.toml`:
 
 ```toml
 # IMPORTANT: the top-level key is `mcp_servers` rather than `mcpServers`.
@@ -473,7 +482,7 @@ if __name__ == "__main__":
     sys.exit(main())
 ```
 
-To have Codex use this script for notifications, you would configure it via `notify` in `~/.codex/config.toml` using the appropriate path to `notify.py` on your computer:
+To have Codex use this script for notifications, you would configure it via `notify` in `~/.openx/config.toml` using the appropriate path to `notify.py` on your computer:
 
 ```toml
 notify = ["python3", "/Users/mbolin/.codex/notify.py"]
@@ -481,7 +490,7 @@ notify = ["python3", "/Users/mbolin/.codex/notify.py"]
 
 ## history
 
-By default, Codex CLI records messages sent to the model in `$CODEX_HOME/history.jsonl`. Note that on UNIX, the file permissions are set to `o600`, so it should only be readable and writable by the owner.
+By default, OpenX CLI records messages sent to the model in `$CODEX_HOME/history.jsonl`. Note that on UNIX, the file permissions are set to `o600`, so it should only be readable and writable by the owner.
 
 To disable this behavior, configure `[history]` as follows:
 
@@ -535,7 +544,7 @@ show_raw_agent_reasoning = true  # defaults to false
 
 The size of the context window for the model, in tokens.
 
-In general, Codex knows the context window for the most common OpenAI models, but if you are using a new model with an old version of the Codex CLI, then you can use `model_context_window` to tell Codex what value to use to determine how much context is left during a conversation.
+In general, Codex knows the context window for the most common OpenAI models, but if you are using a new model with an old version of the OpenX CLI, then you can use `model_context_window` to tell Codex what value to use to determine how much context is left during a conversation.
 
 ## model_max_output_tokens
 

@@ -45,7 +45,7 @@ If you want to add a new feature or change the behavior of an existing one, plea
 
 If you run into problems setting up the project, would like feedback on an idea, or just want to say _hi_ - please open a Discussion or jump into the relevant issue. We are happy to help.
 
-Together we can make Codex CLI an incredible tool. **Happy hacking!** :rocket:
+Together we can make OpenX CLI an incredible tool. **Happy hacking!** :rocket:
 
 ### Contributor license agreement (CLA)
 

@@ -1,0 +1,21 @@
+[package]
+edition = "2024"
+name = "openx-chatgpt"
+version = { workspace = true }
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+openx-common = { path = "../common", features = ["cli"] }
+openx-core = { path = "../core" }
+openx-protocol = { path = "../protocol" }
+reqwest = { version = "0.12", features = ["json", "stream"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+
+[dev-dependencies]
+tempfile = "3"

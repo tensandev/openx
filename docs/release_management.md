@@ -41,7 +41,7 @@ Note that you must have permissions to publish to https://www.npmjs.com/package/
 
 ## Publishing to Homebrew
 
-For Homebrew, we are properly set up with their automation system, so every few hours or so it will check our GitHub repo to see if there is a new release. When it finds one, it will put up a PR to create the equivalent Homebrew release, which entails building Codex CLI from source on various versions of macOS.
+For Homebrew, we are properly set up with their automation system, so every few hours or so it will check our GitHub repo to see if there is a new release. When it finds one, it will put up a PR to create the equivalent Homebrew release, which entails building OpenX CLI from source on various versions of macOS.
 
 Inevitably, you just have to refresh this page periodically to see if the release has been picked up by their automation system:
 

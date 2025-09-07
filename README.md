@@ -1,35 +1,35 @@
-<h1 align="center">OpenAI Codex CLI</h1>
+<h1 align="center">OpenX CLI</h1>
 
-<p align="center"><code>npm i -g @openai/codex</code><br />or <code>brew install codex</code></p>
+<p align="center"><code>npm i -g @openai/openx</code><br />or <code>brew install openx</code></p>
 
-<p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.</br>If you are looking for the <em>cloud-based agent</em> from OpenAI, <strong>Codex Web</strong>, see <a href="https://chatgpt.com/codex">chatgpt.com/codex</a>.</p>
+<p align="center"><strong>OpenX CLI</strong> is a coding agent that runs locally on your computer and supports multiple AI providers including OpenAI, Claude, Gemini, and local LLMs.</br>For the <em>cloud-based agent</em> from OpenAI, see <a href="https://chatgpt.com/codex">chatgpt.com/codex</a>.</p>
 
 <p align="center">
-  <img src="./.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" />
+  <img src="./.github/openx-cli-splash.png" alt="OpenX CLI splash" width="80%" />
   </p>
 
 ---
 
 ## Quickstart
 
-### Installing and running Codex CLI
+### Installing and running OpenX CLI
 
 Install globally with your preferred package manager. If you use npm:
 
 ```shell
-npm install -g @openai/codex
+npm install -g @openai/openx
 ```
 
 Alternatively, if you use Homebrew:
 
 ```shell
-brew install codex
+brew install openx
 ```
 
-Then simply run `codex` to get started:
+Then simply run `openx` to get started:
 
 ```shell
-codex
+openx
 ```
 
 <details>
@@ -51,7 +51,7 @@ Each archive contains a single entry with the platform baked into the name (e.g.
 ### Using Codex with your ChatGPT plan
 
 <p align="center">
-  <img src="./.github/codex-cli-login.png" alt="Codex CLI login" width="80%" />
+  <img src="./.github/openx-cli-login.png" alt="OpenX CLI login" width="80%" />
   </p>
 
 Run `codex` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
@@ -60,12 +60,12 @@ You can also use Codex with an API key, but this requires [additional setup](./d
 
 ### Model Context Protocol (MCP)
 
-Codex CLI supports [MCP servers](./docs/advanced.md#model-context-protocol-mcp). Enable by adding an `mcp_servers` section to your `~/.codex/config.toml`.
+OpenX CLI supports [MCP servers](./docs/advanced.md#model-context-protocol-mcp). Enable by adding an `mcp_servers` section to your `~/.openx/config.toml`.
 
 
 ### Configuration
 
-Codex CLI supports a rich set of configuration options, with preferences stored in `~/.codex/config.toml`. For full configuration options, see [Configuration](./docs/config.md).
+OpenX CLI supports a rich set of configuration options, with preferences stored in `~/.openx/config.toml`. For full configuration options, see [Configuration](./docs/config.md).
 
 ---
 

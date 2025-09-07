@@ -26,7 +26,7 @@ codex --continue
 
 ### Running with a prompt as input
 
-You can also run Codex CLI with a prompt as input:
+You can also run OpenX CLI with a prompt as input:
 
 ```shell
 codex "explain this codebase to me"
@@ -42,7 +42,7 @@ they'll be committed to your working directory.
 
 ### Example prompts
 
-Below are a few bite-size examples you can copy-paste. Replace the text in quotes with your own task. See the [prompting guide](https://github.com/openai/codex/blob/main/codex-cli/examples/prompting_guide.md) for more tips and usage patterns.
+Below are a few bite-size examples you can copy-paste. Replace the text in quotes with your own task. See the [prompting guide](https://github.com/openai/codex/blob/main/openx-cli/examples/prompting_guide.md) for more tips and usage patterns.
 
 | ✨  | What you type                                                                   | What happens                                                               |
 | --- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ Below are a few bite-size examples you can copy-paste. Replace the text in quote
 
 You can give Codex extra instructions and guidance using `AGENTS.md` files. Codex looks for `AGENTS.md` files in the following places, and merges them top-down:
 
-1. `~/.codex/AGENTS.md` - personal global guidance
+1. `~/.openx/AGENTS.md` - personal global guidance
 2. `AGENTS.md` at repo root - shared project notes
 3. `AGENTS.md` in the current working directory - sub-folder/feature specifics
 

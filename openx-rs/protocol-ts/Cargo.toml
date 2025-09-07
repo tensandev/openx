@@ -1,0 +1,21 @@
+[package]
+edition = "2024"
+name = "openx-protocol-ts"
+version = { workspace = true }
+
+[lints]
+workspace = true
+
+[lib]
+name = "openx_protocol_ts"
+path = "src/lib.rs"
+
+[[bin]]
+name = "openx-protocol-ts"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+openx-protocol = { path = "../protocol" }
+ts-rs = "11"
+clap = { version = "4", features = ["derive"] }
